@@ -1,0 +1,19 @@
+logging:
+  level:
+    com.netflix: INFO
+    org:springframework.kafka: INFO
+    org.apache.kafka: INFO
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output: #maps to source.output in DemoProducer
+          destination:  kafkaDemoTopic #kafka topic
+          content-type: application/json
+      kafka:
+        binder:
+          zkNodes: dmira #kafka
+          brokers: dmira #zookeeper
+
+
